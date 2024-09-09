@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+  <h1><%= title %></h1>
+  <table border="1">
+    <thead>
+        <tr>
+            <th>IDEmployee</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Role</th>
+            <th>DateInput</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (employees && employees.length > 0) { %>
+            <% employees.forEach(employee => { %>
+                <tr>
+                    <td><%= employee.IDEmployee %></td>
+                    <td><%= employee.Name %></td>
+                    <td><%= employee.Position %></td>
+                    <td><%= employee.Role %></td>
+                    <td><%= employee.DateInput %></td>
+                </tr>
+            <% }); %>
+        <% } else { %>
+            <tr>
+                <td colspan="5">Không có dữ liệu</td>
+            </tr>
+        <% } %>
+    </tbody>
+  </table>
+
+<%- include('../partials/footer') %>

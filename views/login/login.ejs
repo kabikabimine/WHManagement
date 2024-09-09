@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <title>Login</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.querySelector('form');
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const employeeId = document.querySelector('input[name="employeeId"]').value;
+                
+                fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ employeeId }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Lưu thông tin vào sessionStorage
+                        sessionStorage.setItem('userName', data.userName);
+                        // Chuyển hướng đến trang chính
+                        window.location.href = '/';
+                    } else {
+                        // Hiển thị lỗi đăng nhập
+                        alert(data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Có lỗi xảy ra:', error);
+                });
+            });
+        });
+    </script>
+</head>
+<body style="background-image: url('https://www.montana-aerospace.com/wp-content/uploads/2021/04/sub_assembly-1.png');">
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form>
+                <h1>INPUT YOUR ID NUMBER</h1>
+                <input type="text" name="employeeId" placeholder="ID NUMBER" required />
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <!-- Nội dung overlay bên trái nếu cần -->
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <img src="./images/logo.png" alt="Logo" class="logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
