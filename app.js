@@ -6,6 +6,7 @@ var session = require('express-session');
 var createError = require('http-errors');
 var AuthController = require('./controllers/AuthController');
 var dashboardController = require('./controllers/dashboardController');
+var importController = require('./controllers/importController');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -56,6 +57,8 @@ app.post('/logout', AuthController.logout);
 app.get('/pages', checkAuth, (req, res) => {
   res.render('pages/import');
 });
+
+app.post('/import', checkAuth, importController.importData);
 
 // Kiểm tra và sử dụng router chính xác
 app.use('/', indexRouter);

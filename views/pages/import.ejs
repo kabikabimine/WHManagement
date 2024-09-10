@@ -87,10 +87,81 @@
            
           </div>
         </div>
-                    
+       <!-- switch 1-2-3 -->            
+       <label for="text" class="titleimport">Please select input method</label> 
+
+       <div class="switch-container">
+         <div class="form-check form-switch">
+           <input class="form-check-input" type="checkbox" id="switch1">
+           <label class="form-check-label" for="switch1">Manual input</label>
+         </div>
+       
+         <div class="form-check form-switch">
+           <input class="form-check-input" type="checkbox" id="switch2">
+           <label class="form-check-label" for="switch2">QRCode/Barcode</label>
+         </div>
+       
+         <div class="form-check form-switch">
+           <input class="form-check-input" type="checkbox" id="switch3">
+           <label class="form-check-label" for="switch3">RFID</label>
+         </div>
+       </div>
+
+       <form id="form1" method="post" action="/import">
+        <div class="mb-3">
+            <label for="epicor" class="form-label">EPICOR</label>
+            <input type="text" class="form-control" id="epicor" name="epicor" placeholder="Enter Epicor" required>
+        </div>
+        <div class="mb-3">
+            <label for="vnname" class="form-label">VNNAME</label>
+            <input type="text" class="form-control" id="vnname" name="vnname" placeholder="Enter VNName" required>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">NAME</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+        </div>
+        <div class="mb-3">
+            <label for="manufacturer" class="form-label">MANUFACTURER</label>
+            <input type="text" class="form-control" id="manufacturer" name="manufacturer" placeholder="Enter Manufacturer" required>
+        </div>
+        <div class="mb-3">
+            <label for="pocode" class="form-label">POCODE</label>
+            <input type="text" class="form-control" id="pocode" name="pocode" placeholder="Enter POCode" required>
+        </div>
+        <div class="mb-3">
+            <label for="quantityTotal" class="form-label">QUANTITY TOTAL</label>
+            <input type="number" class="form-control" id="quantityTotal" name="quantityTotal" placeholder="Enter Quantity" required>
+        </div>
+        <div class="mb-3">
+            <label for="inputer" class="form-label">INPUTER</label>
+            <input type="text" class="form-control" id="inputer" name="inputer" placeholder="Enter Inputer" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Import</button>
+    </form>
+      
+    
+      
+       
+        <form id="form2" style="display: none;">
+          <div class="mb-3">
+            <label for="input2" class="form-label">Form 2</label>
+            <input type="text" class="form-control" id="input2" placeholder="Enter something for form 2">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Form 2</button>
+        </form>
         
+
+        <form id="form3" style="display: none;">
+          <div class="mb-3">
+            <label for="input3" class="form-label">Form 3</label>
+            <input type="text" class="form-control" id="input3" placeholder="Enter something for form 3">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Form 3</button>
+        </form>
+        <!-- --------------------------------- --> 
         
       </div>
+      
     </div>
   </div>
 </div>
