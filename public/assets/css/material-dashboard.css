@@ -22671,7 +22671,7 @@ body.dark-version {
 
 label,
 .form-label {
-  font-size: x-large;
+  font-size: large;
   font-weight: 700;
   color: #006271;
   margin: auto;
@@ -24563,7 +24563,7 @@ body:not(.dark-version) .sidenav.bg-transparent .collapse .nav-item .nav-link.ac
   color: #fff;
   border-right-width: 0;
   border-bottom-width: 0;
-  background-color: rgba(199, 199, 199, 0.2);
+  background-color: #e91e63;
 }
 
 .navbar-vertical .navbar-nav>.nav-item .nav-link.active+.collapse .nav-item.active .nav-link.active,
@@ -28016,7 +28016,12 @@ pre[class*="language-"] {
 
 
 .titleimport{
-  padding: 40px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 30px;
+  font-size: xx-large;
 
 }
 .switch-container {
@@ -28053,14 +28058,97 @@ pre[class*="language-"] {
 
 
 /* styles.css */
-/* styles.css */
-@keyframes blink {
+/* CSS cho số lượng thấp hơn 100 (màu vàng nhấp nháy) */
+.blinking-yellow {
+  animation: blinkYellow 1s infinite;
+}
+
+@keyframes blinkYellow {
   0% { background-color: yellow; }
   50% { background-color: transparent; }
   100% { background-color: yellow; }
 }
 
-.blinking {
-  animation: blink 1s infinite;
-  color: black; /* Đặt màu chữ để đảm bảo dễ đọc trên nền vàng */
+/* CSS cho số lượng dưới 10 (màu đỏ nhấp nháy) */
+.blinking-red {
+  animation: blinkRed 1s infinite;
+}
+
+@keyframes blinkRed {
+  0% { background-color: red; }
+  50% { background-color: transparent; }
+  100% { background-color: red; }
+}
+
+/* Tùy chỉnh chung cho bảng */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td, table th {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #ddd;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+
+
+
+
+.import-form{
+ 
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+
+}
+
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
 }
