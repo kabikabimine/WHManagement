@@ -2,9 +2,9 @@
 Warehouse management created by Hoang Nguyen
 # Start Program
 
-npm install
 npm start
-
+# 
+loacalhost:3000
 
 # Demo
 ![image](https://github.com/user-attachments/assets/efb2a1d9-7fc8-4a28-86fb-b5c571ddeab5)
