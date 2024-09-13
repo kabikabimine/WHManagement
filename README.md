@@ -1,6 +1,8 @@
 # WHManagement
 Warehouse management created by Hoang Nguyen
 # Start Program
+
+npm install
 npm start
 
 
