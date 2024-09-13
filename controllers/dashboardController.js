@@ -23,6 +23,11 @@ async function getInventory(req, res) {
             });
         }
 
+        // Thực hiện đếm số lượng nhân viên
+        const employeeCountResult = await pool.request()
+            .query('SELECT COUNT(*) AS employeeCount FROM [dbo].[InfoEmployee]');
+        const employeeCount = employeeCountResult.recordset[0].employeeCount;
+
         // Truy vấn dữ liệu chi tiết hàng hóa theo trang
         const detailResult = await pool.request()
             .query(`SELECT * FROM [dbo].[ManagementInventory]
@@ -38,6 +43,7 @@ async function getInventory(req, res) {
         if (req.xhr) {
             return res.json({
                 managementInventory,
+                employeeCount,
                 currentPage: page,
                 totalPages: totalPages
             });
@@ -47,6 +53,7 @@ async function getInventory(req, res) {
         res.render(req.params.page === 'import' ? 'pages/import' : 'index', {
             title: req.params.page === 'import' ? 'Trang Nhập Kho' : 'Danh sách hàng hóa',
             productCount,
+            employeeCount,
             managementInventory,
             currentPage: page,
             totalPages: totalPages
