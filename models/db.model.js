@@ -4,9 +4,9 @@ const sql = require('mssql');
 // Cấu hình kết nối
 const config = {
     user: 'sa',              // Thay đổi theo thông tin của bạn
-    password: '03@uacv2025!', // Thay đổi theo thông tin của bạn
-    server: 'VNOEESRV\\VNAUTOSRV_SQL17', // Thay đổi theo thông tin của bạn
-    database: 'ComponentManagementTB',
+    password: '', // Thay đổi theo thông tin của bạn
+    server: '', // Thay đổi theo thông tin của bạn
+    database: '',
     options: {
         encrypt: true, // Nếu bạn đang sử dụng SSL
         trustServerCertificate: true // Bỏ qua chứng chỉ tự ký
