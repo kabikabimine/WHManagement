@@ -5,9 +5,9 @@ const totalPeople = 9; // Tổng số người
 let myPosition = 9; // Vị trí của bạn
 let startDate = moment('2024-10-08'); // Ngày bạn phải gửi từ tiếng Anh
 
-const telegramToken = '7797981830:AAFKv1SrdaXnDM2M-njrUOzSILR0J74P27o'; // Thay thế bằng token của bạn
-const chatId = '1873755848'; // Thay thế bằng ID người nhận
-const weatherApiKey = 'bee715bd545c79e933d92c8b46937735'; // Thay thế bằng API key từ OpenWeatherMap
+const telegramToken = ''; // Thay thế bằng token của bạn
+const chatId = ''; // Thay thế bằng ID người nhận
+const weatherApiKey = ''; // Thay thế bằng API key từ OpenWeatherMap
 const location = 'Danang,VN'; // Địa điểm của bạn (VD: Hanoi, VN)
 
 // Hàm gửi thông báo qua Telegram
